@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+"""
+    Author: Yoojin Oh   
+    yoojin.oh@ipvs.uni-stuttgart.de
+
+"""
 import numpy as np
 import rospy
 from sensor_msgs.msg import JointState
