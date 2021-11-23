@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+
+    <arg name="start_rviz" default="true"/>
+	
+	<!-- Launch RVIZ here -->
+    <include if="$(arg start_rviz)" file="$(find rai_panda)/launch/rviz.launch"/>
+  
+
+    <!-- transfrom for camara orientation 2x 180 deg -->
+    <node pkg="tf" type="static_transform_publisher"
+    name="kinectTransformer"
+    args=" 0 0. 0  3.1415926536 3.1415926536 0. /camera_rgb_optical_frame /camera_link 10" />
+
+
+    <!-- lift baxter base 1m -->
+    <node pkg="tf" type="static_transform_publisher"
+    name="baseTransformer"
+    args="0 0 0 0 0 0 /map /base 10" />
+
+      <!-- lift baxter base 1m -->
+    <node pkg="tf" type="static_transform_publisher"
+    name="dbotTrafo"
+    args="0 0 0 0 0 0 /camera_rgb_optical_frame /camera_depth_optical_frame 10" />
+
+
+    <param name="robot_description" 
+            command="$(find xacro)/xacro '$(find rai_panda)/config/dual_arm_rai_panda.urdf.xacro'
+            arm_id_1:=R_panda
+            arm_id_2:=L_panda "/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	
+	<node pkg="tf" type="static_transform_publisher"
+    name="robotTransformer"
+    args="0 0 0 0 0 0 /map /world 10" />
+
+
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <node name="rai_panda_rviz"
+    pkg="rviz"
+    type="rviz"
+    output="screen"
+    launch-prefix=""
+    args="-d $(find rai_panda)/config/rai_sim_panda.rviz"/>
+
+
+</launch>
