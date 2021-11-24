@@ -1,9 +1,16 @@
 ## (Method 1) Minimum installation
 
 1. Download the [franka_description](https://github.com/frankaemika/franka_ros/tree/develop/franka_description) folder into your ros src workspace. You the easiest way is to git clone the whole repository and delete everything else except **franka_description**
+
+2. Run ros_workspace_setup.sh in your desired directory. This will create a ROS catkin workspace and clone the repository 
+```
+bash ros_workspace_directory.sh
+```
+OR manually
+
 2. Clone repository
 
-2. compile catkin workspace
+3. compile catkin workspace
 ```
 git clone https://github.com/yoojinoh/rai_ros_panda.git
 ```
