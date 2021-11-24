@@ -7,7 +7,7 @@
     type="rviz"
     output="screen"
     launch-prefix=""
-    args="-d $(find rai_panda)/config/rai_sim_panda.rviz"/>
+    args="-d $(find rai_ros_panda)/config/rai_sim_panda.rviz"/>
 
 
 </launch>
