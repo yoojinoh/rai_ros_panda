@@ -5,7 +5,7 @@
     <arg name="start_rviz" default="true"/>
 	
 	<!-- Launch RVIZ here -->
-    <include if="$(arg start_rviz)" file="$(find rai_panda)/launch/rviz.launch"/>
+    <include if="$(arg start_rviz)" file="$(find rai_ros_panda)/launch/rviz.launch"/>
   
 
     <!-- transfrom for camara orientation 2x 180 deg -->
@@ -26,7 +26,7 @@
 
 
     <param name="robot_description" 
-            command="$(find xacro)/xacro '$(find rai_panda)/config/dual_arm_rai_panda.urdf.xacro'
+            command="$(find xacro)/xacro '$(find rai_ros_panda)/config/dual_arm_rai_panda.urdf.xacro'
             arm_id_1:=R_panda
             arm_id_2:=L_panda "/>
 
