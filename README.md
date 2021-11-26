@@ -72,6 +72,9 @@ Example python code
 ```
 import sys, time
 import numpy as np
+import rospy  # for this you have to source your devel/setup.bash
+rospy.init_node('publish_robot_states')
+
 
 # sys.path.append('/path_to_your_robotics-course/build')
 import libry as ry
