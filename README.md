@@ -1,18 +1,47 @@
 ## (Method 1) Minimum installation
-
-1. Download the [franka_description](https://github.com/frankaemika/franka_ros/tree/develop/franka_description) folder into your ros src workspace. You the easiest way is to git clone the whole repository and delete everything else except **franka_description**
-
-2. Run ros_workspace_setup.sh in your desired directory. This will create a ROS catkin workspace and clone the repository 
+You need ROS installed by default
+1. Create a project folder.
 ```
-bash ros_workspace_directory.sh
+mkdir practical_robotics && cd practical_robotics
 ```
-OR manually
-
-2. Clone repository
-
-3. compile catkin workspace
+2. Create a bash script with the following and save it as **ros_workspace_setup.sh**:
 ```
+#!/bin/bash
+ROS_VERSION=$1
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+PROJPATH=$(dirname $SCRIPTPATH)
+
+echo $SCRIPTPATH
+
+mkdir -p $SCRIPTPATH/catkin_ws/src
+
+cd $SCRIPTPATH/catkin_ws/
+source /opt/ros/$ROS_VERSION/setup.bash
+
+catkin_make
+source $SCRIPTPATH/catkin_ws/devel/setup.bash
+
+# clone repo
+cd $SCRIPTPATH/catkin_ws/src
 git clone https://github.com/yoojinoh/rai_ros_panda.git
+
+cd $SCRIPTPATH/catkin_ws/src
+# install subversion for downloading subfolder in git repo
+sudo apt install subversion -y
+
+# download only franka_description from repo
+svn export https://github.com/frankaemika/franka_ros.git/trunk/franka_description
+
+cd $SCRIPTPATH/catkin_ws/
+catkin_make
+
+source $SCRIPTPATH/catkin_ws/devel/setup.bash
+echo "Sourced Catkin workspace!!!"
+
+```
+3. Run the bash script. Put in your ros version as argument!! (Ubuntu 18.04-melodic/20.04-noetic) This will create a ROS catkin workspace and clone the repository 
+```
+bash ros_workspace_setup.sh melodic
 ```
 
 
