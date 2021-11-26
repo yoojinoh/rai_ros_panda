@@ -66,11 +66,14 @@ jupyter nbconvert --to script 'my-notebook.ipynb'
 ```
 roslaunch rai_ros_panda panda_rviz.launch
 ```
-2. Use the PandaJointPublisher in your python file. 
+2. Use the PandaJointPublisher in your python file. Be sure to add your **robotics-course/build** folder to the python path.
+
 Example python code
 ```
-import time.sleep
+import sys, time
 import numpy as np
+
+# sys.path.append('/path_to_your_robotics-course/build')
 import libry as ry
 from panda_joint_publisher import PandaJointPublisher
 
