@@ -85,8 +85,9 @@ source devel/setup.bash
 ```
 roslaunch rai_ros_panda panda_rviz.launch
 ```
-3. Run example script
+3. Run example script. Make sure the script has permissions to execute
 ```
+sudo chmod +x example.py
 rosrun rai_ros_panda example.py
 ```
 
