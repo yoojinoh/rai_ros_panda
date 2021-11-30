@@ -16,7 +16,7 @@ class PandaJointPublisher():
             ConfigWorld ([type]): C
             RealWorld ([type]): RealWorld
         """
-        self.pub = rospy.Publisher("joint_states2", JointState, queue_size=10)
+        self.pub = rospy.Publisher("joint_states", JointState, queue_size=10)
         
         self.ConfigWorld = ConfigWorld
         self.RealWorld = RealWorld
