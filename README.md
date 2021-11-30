@@ -4,7 +4,13 @@ You need ROS installed by default
 ```
 mkdir practical_robotics && cd practical_robotics
 ```
-2. Create a bash script with the following and save it as **ros_workspace_setup.sh**:
+2. Create a bash script with the following and save it as **ros_workspace_setup.sh**
+The following script will do:
+* create catkin workspace
+* create non_catkin workspace, clone and compile robotics-course repository
+* download franka_description folder
+* clone this repository
+* catkin_make catkin workspace
 ```
 #!/bin/bash
 ROS_VERSION=$1
@@ -69,6 +75,19 @@ touch CATKIN_IGNORE
 3. Rebuild the ROS workspace
 
 ## Usage
+1. Always be sure to source your catkin workspace devel/setup.bash in your terminal
+```
+cd /path/to/your/catkin_ws
+source devel/setup.bash
+```
+2. Launch Rviz visualizer
+```
+roslaunch rai_ros_panda panda_rviz.launch
+```
+3. Run example script
+
+
+# Create your own file
 The rai code that you will be running should be a .py file rather than .ipynb file. Convert it into a python file
 ```
 jupyter nbconvert --to script 'my-notebook.ipynb'
@@ -81,6 +100,8 @@ roslaunch rai_ros_panda panda_rviz.launch
 
 Example python code
 ```
+#!/usr/bin/env python
+
 import sys, time
 import numpy as np
 import rospy  # for this you have to source your devel/setup.bash
