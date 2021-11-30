@@ -5,6 +5,7 @@ You need ROS installed by default
 mkdir practical_robotics && cd practical_robotics
 ```
 2. Create a bash script with the following and save it as **ros_workspace_setup.sh**
+
 The following script will do:
 * create catkin workspace
 * create non_catkin workspace, clone and compile robotics-course repository
