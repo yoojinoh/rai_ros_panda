@@ -19,7 +19,7 @@ mkdir $SCRIPTPATH/catkin_ws/non_catkin
 cd $SCRIPTPATH/catkin_ws/non_catkin
 touch CATKIN_IGNORE
 
-git clone https://github.com/humans-to-robots-motion/robotics-course.git
+git clone --recursive https://github.com/humans-to-robots-motion/robotics-course.git
 cd robotics-course
 mkdir build && cd build
 cmake ..
