@@ -85,6 +85,9 @@ source devel/setup.bash
 roslaunch rai_ros_panda panda_rviz.launch
 ```
 3. Run example script
+```
+rosrun rai_ros_panda example.py
+```
 
 
 # Create your own file
