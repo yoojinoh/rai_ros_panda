@@ -40,7 +40,7 @@ class PandaObjectsPublisher():
             # fill in marker type and size
             # http://wiki.ros.org/rviz/DisplayTypes/Marker
             # Marker.CYLINDER, Marker.CUBE, Marker.SPHERE etc.
-            m.type = marker_type
+            m.type = 
             m.scale.x =
             m.scale.y = 
             m.scale.z = 
