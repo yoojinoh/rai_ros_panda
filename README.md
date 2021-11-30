@@ -15,6 +15,17 @@ echo $SCRIPTPATH
 
 mkdir -p $SCRIPTPATH/catkin_ws/src
 
+mkdir $SCRIPTPATH/catkin_ws/non_catkin
+cd $SCRIPTPATH/catkin_ws/non_catkin
+touch CATKIN_IGNORE
+
+git clone https://github.com/humans-to-robots-motion/robotics-course.git
+cd robotics-course
+mkdir build && cd build
+cmake ..
+make -j $(command nproc)
+echo "Successfully compiled robotics-course!!"
+
 cd $SCRIPTPATH/catkin_ws/
 source /opt/ros/$ROS_VERSION/setup.bash
 
